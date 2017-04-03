@@ -216,7 +216,8 @@ public class POC {
 		driver.findElement(By.xpath(closeIcon)).click();
 		Screen s=new Screen();
 		Pattern BonaairBallon=new Pattern(RpPath+"\\screenshots\\304 Bonair.PNG");
-        s.find(BonaairBallon);
+		Thread.sleep(5000);
+		s.find(BonaairBallon);
 		s.hover(BonaairBallon);
 		s.click(BonaairBallon);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(buildinginfo)));

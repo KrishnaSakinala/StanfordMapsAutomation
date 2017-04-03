@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -132,9 +133,9 @@ public class POC {
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
 
-		System.setProperty("webdriver.gecko.driver", RpPath+"\\lib\\geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", RpPath+"\\lib\\chromedriver.exe");
 
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 
 		driver.manage().window().setSize(new Dimension(1382, 744));
 
@@ -234,7 +235,6 @@ public class POC {
 	public void verifyPointsOfInterestPass() throws Exception
 
 	{
-
 		test = extent.createTest("VerifyPointsOfInterest Positive Scenario Assertion");
 		driver.findElement(By.xpath(menuIcon)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(visitingcampu)));

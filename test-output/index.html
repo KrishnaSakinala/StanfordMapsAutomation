@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="sMaps.POC" hash-for-method="verifyPointsOfInterestFail">verifyPointsOfInterestFail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +116,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="sMaps.POC" hash-for-method="assertions">assertions</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="sMaps.POC" hash-for-method="mapFieldsAssertions">mapFieldsAssertions</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -112,12 +126,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="sMaps.POC" hash-for-method="search">search</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="sMaps.POC" hash-for-method="verifyPointsOfInterestFail">verifyPointsOfInterestFail</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="sMaps.POC" hash-for-method="searchBuilding">searchBuilding</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -137,6 +146,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">sMaps.POC</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPointsOfInterestFail">
+                  </a> <!-- verifyPointsOfInterestFail -->
+                  <span class="method-name">verifyPointsOfInterestFail</span>
+                  <div class="stack-trace">java.lang.AssertionError: Images are Same expected [false] but found [true]
+	at sMaps.POC.verifyPointsOfInterestFail(POC.java:274)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -145,9 +173,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="assertions">
-                  </a> <!-- assertions -->
-                  <span class="method-name">assertions</span>
+                  <a name="mapFieldsAssertions">
+                  </a> <!-- mapFieldsAssertions -->
+                  <span class="method-name">mapFieldsAssertions</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -159,16 +187,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="search">
-                  </a> <!-- search -->
-                  <span class="method-name">search</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyPointsOfInterestFail">
-                  </a> <!-- verifyPointsOfInterestFail -->
-                  <span class="method-name">verifyPointsOfInterestFail</span>
+                  <a name="searchBuilding">
+                  </a> <!-- searchBuilding -->
+                  <span class="method-name">searchBuilding</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -236,23 +257,23 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyPointsOfInterestPass')
 data.setCell(0, 2, 'sMaps.POC')
-data.setCell(0, 3, 30208);
+data.setCell(0, 3, 30143);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyPointsOfInterestFail')
+data.setCell(1, 1, 'searchBuilding')
 data.setCell(1, 2, 'sMaps.POC')
-data.setCell(1, 3, 21979);
+data.setCell(1, 3, 19803);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'search')
+data.setCell(2, 1, 'verifyPointsOfInterestFail')
 data.setCell(2, 2, 'sMaps.POC')
-data.setCell(2, 3, 19946);
+data.setCell(2, 3, 17378);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'menuAssertions')
 data.setCell(3, 2, 'sMaps.POC')
-data.setCell(3, 3, 4998);
+data.setCell(3, 3, 3664);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'assertions')
+data.setCell(4, 1, 'mapFieldsAssertions')
 data.setCell(4, 2, 'sMaps.POC')
-data.setCell(4, 3, 1950);
+data.setCell(4, 3, 1498);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -289,48 +310,50 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">assertions</span>
-                <span class="method-start">20373 ms</span>
+                <span class="method-name">mapFieldsAssertions</span>
+                <span class="method-start">14419 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=assertions status=SUCCESS method=POC.assertions()[pri:1, instance:sMaps.POC@3bd550]...)</span>
-                <span class="method-start">22324 ms</span>
+                <span class="method-name">getResult([TestResult name=mapFieldsAssertions status=SUCCESS method=POC.mapFieldsAssertions()[pri:1, instance...)</span>
+                <span class="method-start">15918 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">menuAssertions</span>
-                <span class="method-start">22337 ms</span>
+                <span class="method-start">15924 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=menuAssertions status=SUCCESS method=POC.menuAssertions()[pri:2, instance:sMaps.POC...)</span>
-                <span class="method-start">27336 ms</span>
+                <span class="method-start">19590 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">search</span>
-                <span class="method-start">27337 ms</span>
+                <span class="method-name">searchBuilding</span>
+                <span class="method-start">19591 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=search status=SUCCESS method=POC.search()[pri:3, instance:sMaps.POC@3bd550] output=...)</span>
-                <span class="method-start">47286 ms</span>
+                <span class="method-name">getResult([TestResult name=searchBuilding status=SUCCESS method=POC.searchBuilding()[pri:3, instance:sMaps.POC...)</span>
+                <span class="method-start">39397 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">verifyPointsOfInterestPass</span>
-                <span class="method-start">47287 ms</span>
+                <span class="method-start">39398 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">getResult([TestResult name=verifyPointsOfInterestPass status=SUCCESS method=POC.verifyPointsOfInterestPass()[p...)</span>
-                <span class="method-start">77498 ms</span>
+                <span class="method-start">69544 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifyPointsOfInterestFail</span>
-                <span class="method-start">77499 ms</span>
+                <span class="method-start">69544 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=verifyPointsOfInterestFail status=SUCCESS method=POC.verifyPointsOfInterestFail()[p...)</span>
-                <span class="method-start">99479 ms</span>
+                <span class="method-name">getResult([TestResult name=verifyPointsOfInterestFail status=FAILURE method=POC.verifyPointsOfInterestFail()[p...)</span>
+                <span class="method-start">86925 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">99480 ms</span>
+                <span class="method-start">86936 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

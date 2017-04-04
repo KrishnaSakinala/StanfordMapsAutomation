@@ -48,137 +48,96 @@ public class POC {
 	public static WebDriverWait wait;
 
 	String RpPath=System.getProperty("user.dir");
-
 	String menuIcon = "//*[@id='openerMain']";
-
 	String pointOfInterestCheckbox = "//*[@id='poi']";
-
 	String closeIcon = "//*[@id='closeButton2']";
-
 	String mapCanvas = "//*[@id='map_canvas']/div/div/div[1]/div[3]";
-
 	String stanfordTab = "//div[@title='Stanford Map']";
-
 	String campusshuttletab="//div[@title='Free Marguerite Shuttle']";
-
 	String sattelitetab="//div[@title='Show satellite imagery']";
-
 	String traffictab="//div[12]/div[4]/div";
-
 	String serachicon="//button[@id='searchButton']";
-
 	String leftmenuicon="//button[@id='openerMain']";
-
 	String searchtext="//input[@id='search_address']";
-
 	String relatedwebsite="//img[@title='Related Websites']";
-
 	String mapplegend="//img[@title='Map Legend']";
-
 	String infoicon="//img[@alt='Information']";
-
 	String qustnbankicon="//a[@id='questionsBlock']/img";
-
 	String imghomeicon="//img[@src='images/new/home_g2.png']";
-
 	String imgprinticon="//img[@src='images/new/print_g2.png']";
-
 	String imgemailicon="//img[@src='images/new/email_g2.png']";
-
 	String imgshreicon="//img[@src='images/new/share_g2.png']";
-
 	String zoominicon="//div[@id='map_canvas']/div/div/div[10]/div/div/div/div/img";
-
 	String zoomouticon="//div[@id='map_canvas']/div/div/div[10]/div/div/div[3]/div/img";
-
 	String scouticon="//div[2]/div[3]/img";
-
 	String visitingcampu="//div[@title='Visiting Campus']";
-
 	String lifeoncampus="//div[@title='Life on Campus']";
-
 	String parkTrans="//div[@title='Parking & Transportation']";
-
 	String saftySecu="//div[@title='Safety & Security']";
-
 	String openexplore="//img[@id='openerExploreSU']";
-
 	String openDir="//img[@id='openerDirection2']";
-
 	String srchtexttype="340 bonair siding";
-
-
 	String buildinginfo="//h4[@id='myModalLabel']";
-
 	String buildingname="//div[@id='buildingInfo']/div/div/div[2]/span";
-
 	String closesearchresults="//button[@class='close']";
-	
 	String timelimitparking="//div[@id='collapse_30']/div/p/label";
-	
 	String loadingzone="//label[@id='load']";
-	
 	String Mstop="//label[@id='m_stop']";
-	
 	String permitparkA="//label[@id='park-a']";
-
-
-
 
 	@BeforeClass
 
 	public void init() throws InterruptedException
-
 	{
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/StanfordAutomationReport.html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-
 		System.setProperty("webdriver.chrome.driver", RpPath+"\\lib\\chromedriver.exe");
-
 		ChromeOptions cOptions = new ChromeOptions();
 		cOptions.addArguments("disable-infobars");
-		
 		driver = new ChromeDriver(cOptions);
-
 		driver.manage().window().setSize(new Dimension(1382, 744));
-
 		driver.manage().deleteAllCookies();
-
 		driver.get("https://campus-map.stanford.edu/");
 		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-
 		wait= new WebDriverWait(driver, 30);
-
-
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));
-
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-
 	}
 
 	@Test(priority=1, enabled=true)	
-	public void assertions()
+	public void mapFieldsAssertions()
 	{
 		test = extent.createTest("Map Fields Assertion");
 		
 		verifyElementPresent(serachicon, "searchicon");
+		test.info("Search Icon Exist");
 		verifyElementPresent(leftmenuicon, "leftmenuicon");
+		test.info("Left Menu Icon Exist");
 		verifyElementPresent(searchtext, "searchtext");
+		test.info("Search Text Box Exist");
 		verifyElementPresent(relatedwebsite, "relatedwebsite");
+		test.info("Related WebSite Exist");
 		verifyElementPresent(mapplegend, "mapplegend");
+		test.info("Map Legend Exist");
 		verifyElementPresent(infoicon, "infoicon");
+		test.info("Info Icon Exist");
 		verifyElementPresent(qustnbankicon, "qustnbankicon");
+		test.info("Question mark Icon Exist");
 		verifyElementPresent(imghomeicon, "imghomeicon");
+		test.info("Home Icon Exist");
 		verifyElementPresent(imgemailicon, "imgemailicon");
+		test.info("Mail Icon Exist");
 		verifyElementPresent(imgprinticon, "imgprinticon");
+		test.info("Print Icon Exist");
 		verifyElementPresent(imgshreicon,"imgshreicon");
+		test.info("Share Icon Exist");
 		verifyElementPresent(campusshuttletab, "campusshuttletab");
+		test.info("Campus Shuttle Tab Exist");
 		verifyElementPresent(sattelitetab, "sattelitetab");
+		test.info("Satellite Tab Exist");
 		verifyElementPresent(traffictab, "traffictab");
-
-
+		test.info("Traffic Tab Exist");
 	}
 	
 	@Test(priority=2, enabled=true)
@@ -188,22 +147,29 @@ public class POC {
 		driver.findElement(By.xpath(menuIcon)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(visitingcampu)));
 		verifyElementPresent(visitingcampu, "visitingcampu");
+		test.info("Visiting Campus Exist");
 		driver.findElement(By.xpath(visitingcampu)).click();
 		verifyElementPresent(lifeoncampus, "lifeoncampus");
+		test.info("Life on Campus Exist");
 		verifyElementPresent(parkTrans, "parkTrans");
+		test.info("Parking & Transportation Exist");
 		verifyElementPresent(saftySecu, "saftySecu");
+		test.info("Safety & Security Exist");
 		verifyElementPresent(openexplore, "openexplore");
+		test.info("Explore Standford Icon Exist");
 		verifyElementPresent(openDir, "openDir");
+		test.info("Get Directions Icon Exist");
 		verifyElementPresent(closeIcon, "closeIcon");
+		test.info("Close Icon Exist");
 		driver.findElement(By.xpath(closeIcon)).click();
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));	
 	}
 
 	@Test(priority=3, enabled=true)
-	public void search()throws Exception
+	public void searchBuilding()throws Exception
 	{
-		test = extent.createTest("Search Functionality");
+		test = extent.createTest("Search Functionality - 304 Bonair");
 		driver.findElement(By.xpath(searchtext)).sendKeys(srchtexttype);
 		Thread.sleep(2000);
 		Actions act= new Actions(driver);
@@ -232,13 +198,11 @@ public class POC {
 		driver.findElement(By.xpath(closesearchresults)).click();
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));	
-		
 	}
 
 
 	@Test(priority=4,enabled=true)
 	public void verifyPointsOfInterestPass() throws Exception
-
 	{
 		test = extent.createTest("VerifyPointsOfInterest Positive Scenario Assertion");
 		driver.findElement(By.xpath(menuIcon)).click();
@@ -307,7 +271,7 @@ public class POC {
 		ImageDiff diff = imgDiff.makeDiff(expectedImage, actualImage);
 		Thread.sleep(5000);
 		
-		Assert.assertTrue(diff.hasDiff(),"Images are Same");
+		Assert.assertFalse(diff.hasDiff(),"Images are Same");
 		Thread.sleep(2000);
 		driver.navigate().refresh();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));
@@ -345,7 +309,6 @@ public class POC {
 	public void backToNormal(String locator)
 
 	{
-
 		driver.findElement(By.xpath(menuIcon)).click();
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(locator))));
 		driver.findElement(By.xpath(locator)).click();

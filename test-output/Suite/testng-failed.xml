@@ -6,10 +6,7 @@
       <class name="sMaps.POC">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyPointsOfInterestPass"/>
-          <include name="menuAssertions"/>
           <include name="verifyPointsOfInterestFail"/>
-          <include name="search"/>
           <include name="init"/>
           <include name="getResult"/>
         </methods>

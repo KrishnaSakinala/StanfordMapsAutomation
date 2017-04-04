@@ -12,6 +12,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -135,7 +136,10 @@ public class POC {
 
 		System.setProperty("webdriver.chrome.driver", RpPath+"\\lib\\chromedriver.exe");
 
-		driver = new ChromeDriver();
+		ChromeOptions cOptions = new ChromeOptions();
+		cOptions.addArguments("disable-infobars");
+		
+		driver = new ChromeDriver(cOptions);
 
 		driver.manage().window().setSize(new Dimension(1382, 744));
 
@@ -243,15 +247,16 @@ public class POC {
 		driver.findElement(By.xpath(pointOfInterestCheckbox)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(closeIcon)));
 		driver.findElement(By.xpath(closeIcon)).click();
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 
 		WebElement map = driver.findElement(By.xpath(mapCanvas));
 		Screenshot mapWithPointsFirst = new AShot().takeScreenshot(driver, map);
 		BufferedImage actualImage = mapWithPointsFirst.getImage();
+		
 		/*Screenshot screenshot = new AShot().takeScreenshot(driver,map);
 	    ImageIO.write(screenshot.getImage(),"PNG",new File(RpPath +"\\screenshots\\Maps-poi.png"));*/
 	 
-	    Thread.sleep(4000);
+	    Thread.sleep(8000);
 		BufferedImage expectedImage = ImageIO.read(new File(RpPath +"\\screenshots\\Maps-poi.png"));
 		ImageDiffer imgDiff = new ImageDiffer();
 		ImageDiff diff = imgDiff.makeDiff(expectedImage, actualImage);
@@ -276,18 +281,15 @@ public class POC {
 	    System.out.println(secondwindow);
 	    
 	    driver.switchTo().window(currentWindow);
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));	
+	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));
 	   
 	    driver.navigate().refresh();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));	
-	 
-
 	}
 
 
 	@Test(priority=5, enabled=true)
 	public void verifyPointsOfInterestFail() throws Exception
-
 	{
 		test = extent.createTest("VerifyPointsOfInterest Negative Scenario Assertion");
 		driver.findElement(By.xpath(menuIcon)).click();
@@ -308,7 +310,7 @@ public class POC {
 		Assert.assertTrue(diff.hasDiff(),"Images are Same");
 		Thread.sleep(2000);
 		driver.navigate().refresh();
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));	
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(stanfordTab)));
 
 	}
 	

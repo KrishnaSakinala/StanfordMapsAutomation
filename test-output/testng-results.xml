@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="5" passed="4">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="78772" started-at="2017-04-03T14:24:10Z" finished-at="2017-04-03T14:25:29Z">
+  <suite name="Suite" duration-ms="101036" started-at="2017-04-04T08:26:21Z" finished-at="2017-04-04T08:28:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="78772" started-at="2017-04-03T14:24:10Z" finished-at="2017-04-03T14:25:29Z">
+    <test name="Test" duration-ms="101036" started-at="2017-04-04T08:26:21Z" finished-at="2017-04-04T08:28:02Z">
       <class name="sMaps.POC">
-        <test-method status="PASS" signature="init()[pri:0, instance:sMaps.POC@3bd550]" name="init" is-config="true" duration-ms="15265" started-at="2017-04-03T19:54:10Z" finished-at="2017-04-03T19:54:26Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:sMaps.POC@3bd550]" name="init" is-config="true" duration-ms="20367" started-at="2017-04-04T13:56:21Z" finished-at="2017-04-04T13:56:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="assertions()[pri:1, instance:sMaps.POC@3bd550]" name="assertions" duration-ms="1629" started-at="2017-04-03T19:54:26Z" finished-at="2017-04-03T19:54:27Z">
+        <test-method status="PASS" signature="assertions()[pri:1, instance:sMaps.POC@3bd550]" name="assertions" duration-ms="1950" started-at="2017-04-04T13:56:42Z" finished-at="2017-04-04T13:56:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertions -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="8" started-at="2017-04-03T19:54:27Z" finished-at="2017-04-03T19:54:27Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="12" started-at="2017-04-04T13:56:43Z" finished-at="2017-04-04T13:56:43Z">
           <params>
             <param index="0">
               <value>
@@ -26,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="menuAssertions()[pri:2, instance:sMaps.POC@3bd550]" name="menuAssertions" duration-ms="4761" started-at="2017-04-03T19:54:27Z" finished-at="2017-04-03T19:54:32Z">
+        <test-method status="PASS" signature="menuAssertions()[pri:2, instance:sMaps.POC@3bd550]" name="menuAssertions" duration-ms="4998" started-at="2017-04-04T13:56:43Z" finished-at="2017-04-04T13:56:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuAssertions -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="1" started-at="2017-04-03T19:54:32Z" finished-at="2017-04-03T19:54:32Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="1" started-at="2017-04-04T13:56:48Z" finished-at="2017-04-04T13:56:48Z">
           <params>
             <param index="0">
               <value>
@@ -41,11 +41,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="search()[pri:3, instance:sMaps.POC@3bd550]" name="search" duration-ms="20596" started-at="2017-04-03T19:54:32Z" finished-at="2017-04-03T19:54:53Z">
+        <test-method status="PASS" signature="search()[pri:3, instance:sMaps.POC@3bd550]" name="search" duration-ms="19946" started-at="2017-04-04T13:56:48Z" finished-at="2017-04-04T13:57:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- search -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="0" started-at="2017-04-03T19:54:53Z" finished-at="2017-04-03T19:54:53Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="0" started-at="2017-04-04T13:57:08Z" finished-at="2017-04-04T13:57:08Z">
           <params>
             <param index="0">
               <value>
@@ -56,64 +56,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="FAIL" signature="verifyPointsOfInterestPass()[pri:4, instance:sMaps.POC@3bd550]" name="verifyPointsOfInterestPass" duration-ms="13267" started-at="2017-04-03T19:54:53Z" finished-at="2017-04-03T19:55:06Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Images are Same expected [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Images are Same expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertFalse(Assert.java:63)
-	at sMaps.POC.verifyPointsOfInterestPass(POC.java:259)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="verifyPointsOfInterestPass()[pri:4, instance:sMaps.POC@3bd550]" name="verifyPointsOfInterestPass" duration-ms="30208" started-at="2017-04-04T13:57:08Z" finished-at="2017-04-04T13:57:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPointsOfInterestPass -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="6" started-at="2017-04-03T19:55:06Z" finished-at="2017-04-03T19:55:06Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="0" started-at="2017-04-04T13:57:39Z" finished-at="2017-04-04T13:57:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyPointsOfInterestPass status=FAILURE method=POC.verifyPointsOfInterestPass()[pri:4, instance:sMaps.POC@3bd550] output={null}]]]>
+                <![CDATA[[TestResult name=verifyPointsOfInterestPass status=SUCCESS method=POC.verifyPointsOfInterestPass()[pri:4, instance:sMaps.POC@3bd550] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="verifyPointsOfInterestFail()[pri:5, instance:sMaps.POC@3bd550]" name="verifyPointsOfInterestFail" duration-ms="21535" started-at="2017-04-03T19:55:06Z" finished-at="2017-04-03T19:55:27Z">
+        <test-method status="PASS" signature="verifyPointsOfInterestFail()[pri:5, instance:sMaps.POC@3bd550]" name="verifyPointsOfInterestFail" duration-ms="21979" started-at="2017-04-04T13:57:39Z" finished-at="2017-04-04T13:58:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPointsOfInterestFail -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="1" started-at="2017-04-03T19:55:27Z" finished-at="2017-04-03T19:55:27Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:sMaps.POC@3bd550]" name="getResult" is-config="true" duration-ms="0" started-at="2017-04-04T13:58:01Z" finished-at="2017-04-04T13:58:01Z">
           <params>
             <param index="0">
               <value>
@@ -124,11 +86,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:sMaps.POC@3bd550]" name="tearDown" is-config="true" duration-ms="1671" started-at="2017-04-03T19:55:27Z" finished-at="2017-04-03T19:55:29Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sMaps.POC@3bd550]" name="tearDown" is-config="true" duration-ms="1546" started-at="2017-04-04T13:58:01Z" finished-at="2017-04-04T13:58:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- sMaps.POC -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
